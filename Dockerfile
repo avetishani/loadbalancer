@@ -21,7 +21,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
-#ADD index.html /usr/share/nginx/html
+ADD version.html /usr/share/nginx/html
 ADD nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80 443 32777 32778 32779 32780
